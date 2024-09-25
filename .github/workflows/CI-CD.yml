@@ -59,5 +59,7 @@ jobs:
           name: dist-files
       - name: Display structure of downloaded files
         run: ls -R
+      - name: Output Filename
+        run: echo "${{ needs.build.outputs.script-file }}"
       - name: Deploy
         run: echo "Deploy in an Service Provider, coming soon...!!!"
