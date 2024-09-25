@@ -1,0 +1,33 @@
+# name: Events
+# # Events that trigger a Pipeline
+# run-name: ${{ github.actor }} is testing out GitHub Actions
+
+# on:
+#   pull_request:
+#     types:
+#       - opened
+#   workflow_dispatch:
+#   push:
+#     branches:
+#       - main
+#       - dev
+#       - 'feat/**' # All branches that start with feat
+#     paths-ignore:
+#       - '.github/workflows/*' # If the change occurs in .github/workflows/* (GitHub workflows configuration files), the workflow will not be triggered, as those paths are excluded.
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Output event data
+#         run: echo "${{ toJSON(github.event) }}"
+#       - name: Get Code
+#         uses: actions/checkout@v3
+#       - name: Install dependencies
+#         run: npm ci
+#       - name: Test code
+#         run: npm run test
+#       - name: Build code
+#         run: npm run build
+#       - name: Deploy project
+#         run: echo "Deploying..."
